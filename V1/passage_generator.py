@@ -13,14 +13,15 @@ def create_passage(summary=""):
                        "embrace their parents' reassuring falsehoods and strive for normality. "
                        "While the narrative welcomes standard readers, those who connect deeply "
                        "with the tale are advised to step away.")
-    custom_prompt = (f"Write an engaging introduction to a novel in the style of {author}. "
+    custom_prompt = (f"Write an engaging passage to a novel in the style of {author}. "
                      f"{summary} {style_guide}. "
                      f"Do not use information not in the summary.")
     print(custom_prompt)
     passage = generate_text(custom_prompt)
     return passage
 
-
+print(create_passage("'John stumbles upon a secret society in an abandoned warehouse. He hides and observes an eerie, "
+                     "masked gathering engaged in a dark ceremony."))
 def produce_passages_outline(event_names, extract_integer, create_passage, chap_summary):
     # Generate passage count for each event
     passage_counts = []

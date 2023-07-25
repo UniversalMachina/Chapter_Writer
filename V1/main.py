@@ -18,6 +18,8 @@ brief_summary = "In this chapter, the protagonist Percy Jackson goes on a school
                 "Mr. Brunner and his friend Grover, adding to his confusion and fear."
 
 
+
+
 # Call the function
 # event_names, chap_summary = generate_event_summary(brief_summary)
 

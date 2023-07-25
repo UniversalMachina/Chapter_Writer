@@ -1,0 +1,177 @@
+# from TextGen import textgen as generate_text
+# from TextGen import textgen3 as generate_text3
+# def generate_sequence_part(chap_summary, event_name, sequence_part, previous_sequences=''):
+#     sequence_prompt = (f"Your task as an AI writing assistant is to construct the {sequence_part} of a clear, "
+#                        f"ultra-concise sequence of events given a summary. Include only necessary details, avoid embellishments "
+#                        f"and commentary.\n\n")
+#     if sequence_part == 'first part (1/3)':
+#         sequence_prompt += (
+#             f"For the following event: {event_name}. Generate a sequence that covers Percy Jackson's point of view.")
+#     elif sequence_part == 'second part (2/3)':
+#         sequence_prompt += (
+#             f"Given the first sequence: {previous_sequences}. Continue the sequence to cover Annabeth Chase's "
+#             f"point of view in the argument about the nature of camp life.")
+#     elif sequence_part == 'final part (3/3)':
+#         sequence_prompt += (
+#             f"Given the first and second sequences: {previous_sequences}. Finalize the sequence to cover the "
+#             f"outcome of the argument about the nature of camp life.")
+#     else:
+#         raise ValueError(f'Invalid sequence part: {sequence_part}')
+#
+#     return generate_text(sequence_prompt)
+#
+#
+# # An example usage of the function:
+#
+# chap_summary = "..."  # replace with your chapter summary
+# event_name = "Percy Jackson argues with Annabeth about the nature of camp life."
+#
+#   # replace with your event name
+# first_sequence = generate_sequence_part(chap_summary, event_name, 'first part (1/3)')
+# print(first_sequence)
+# second_sequence = generate_sequence_part(chap_summary, event_name, 'second part (2/3)', first_sequence)
+# print(second_sequence)
+# final_sequence = generate_sequence_part(chap_summary, event_name, 'final part (3/3)',
+#                                         first_sequence + '\n' + second_sequence)
+# print(final_sequence)
+
+
+# from TextGen import textgen as generate_text
+# from TextGen import textgen3 as generate_text3
+#
+# def generate_sequence_parts(chap_summary, event_name, num_parts):
+#     parts = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth']
+#     sequence_parts = [f'{parts[i]} part ({i+1}/{num_parts})' for i in range(num_parts)]
+#
+#     sequences = ''
+#     for i, sequence_part in enumerate(sequence_parts):
+#         sequence_prompt = (f"Your task as an AI writing assistant is to construct the {sequence_part} of a clear, "
+#                            f"ultra-concise sequence of events given a summary. Include only necessary details, avoid embellishments "
+#                            f"and commentary.\n\n")
+#         if i == 0:  # 'first part (1/n)'
+#             sequence_prompt += (
+#                 f"For the following event: {event_name}. Generate a sequence that covers the first part of the event.")
+#         elif i != num_parts - 1:  # 'middle parts (2/n to n-1/n)'
+#             sequence_prompt += (
+#                 f"Given the previous sequences: {sequences}. Continue the sequence by providing additional details about the event.")
+#         else:  # 'final part (n/n)'
+#             sequence_prompt += (
+#                 f"Given the previous sequences: {sequences}. Finalize the sequence to cover the "
+#                 f"outcome of the event.")
+#
+#         sequence = generate_text(sequence_prompt)
+#         sequences += sequence + '\n'
+#         print(sequence)
+#
+#     return sequences
+#
+#
+# # An example usage of the function:
+#
+#
+# chap_summary = ("The chapter starts with John's discovery of the secret society. This unexpected revelation takes place "
+#                  "in an eerie, abandoned warehouse at the outskirts of town. The silent, gigantic structure, with its "
+#                  "creaky wooden floorboards and dim, flickering light, adds a chilling atmosphere to the unfolding mystery. "
+#                  "As he ducks behind a pile of old crates, John inadvertently witnesses a secret gathering of masked "
+#                  "individuals engaged in an ominous ceremony. His heart pounds with fear and bewilderment, realising that "
+#                  "he's stumbled upon something far darker and deeper than he could ever have imagined. The implications of "
+#                  "this discovery are enormous for the overall plot, introducing an intricate web of conspiracy that John "
+#                  "must now unravel. Shortly after this discovery, John comes face to face with a conflict involving his old "
+#                  "friend, George. Despite the long-established camaraderie, their relationship fumbles into disagreement when "
+#                  "George too reveals his involvement with the secret society. The conversation happens in John's once "
+#                  "comforting and familiar apartment, the tension palpable between the two long-time friends. George, despite "
+#                  "his loyalty, defends his allegiance to the secret society, causing a rift between them that neither had "
+#                  "anticipated, and adding even more to the emotional stakes of the unraveling mystery. The chapter concludes "
+#                  "with an unexpected ally appearing in the form of Claire, John's neighbor. After his falling out with George, "
+#                  "John feels utterly alone until he stumbles into Claire in the building's shared laundry room. As they strike "
+#                  "up a conversation, she subtly hints at her knowledge of the secret society and offers her assistance. Despite "
+#                  "her seemingly cheery demeanor, there's also something mysterious about Claire that hints at a hidden agenda. "
+#                  "However, John, desperate for any help, finds solace in Claire – a character who suddenly turns from peripheral "
+#                  "to central. Her surprising involvement suggests a shift in alliances and provides a glimmer of hope in John's "
+#                  "increasingly complicated situation, thereby adding an interesting twist to the narrative.")
+# event_name = ("The chapter starts with John's discovery of the secret society. This unexpected revelation takes place "
+#                    "in an eerie, abandoned warehouse at the outskirts of town. The silent, gigantic structure, with its "
+#                    "creaky wooden floorboards and dim, flickering light, adds a chilling atmosphere to the unfolding mystery. "
+#                    "As he ducks behind a pile of old crates, John inadvertently witnesses a secret gathering of masked "
+#                    "individuals engaged in an ominous ceremony. His heart pounds with fear and bewilderment, realizing that "
+#                    "he's stumbled upon something far darker and deeper than he could ever have imagined. The implications of "
+#                    "this discovery are enormous for the overall plot, introducing an intricate web of conspiracy that John "
+#                    "must now unravel.")
+#
+# num_parts = 3
+#
+# sequences = generate_sequence_parts(chap_summary, event_name, num_parts)
+
+
+# from TextGen import textgen as generate_text
+# from TextGen import textgen3 as generate_text3
+#
+# def generate_sequence_parts(chap_summary, event_name, num_parts):
+#     parts = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth']
+#     sequence_parts = [f'{parts[i]} part ({i+1}/{num_parts})' for i in range(num_parts)]
+#
+#     sequences = ''
+#     for i, sequence_part in enumerate(sequence_parts):
+#         remaining_sequences = num_parts - (i + 1)
+#         # print(sequence_parts)
+#         sequence_prompt = (f"Your task as an AI writing assistant is to construct the {sequence_part} of a clear, "
+#                            f"ultra-concise sequence of events given a summary. You must strictly adhere to the events described "
+#                            f"in the summary - do not introduce new actions or tangents. Detail internal "
+#                            f"monologues, creative passages or quotes, and specific events provided in the event summary. Ensure to keep it concise as possible "
+#                            f"Here is an example:"
+#                            f"\n the narrator, a reluctant 'half-blood', warns those suspecting they might be similar. "
+#                            f"They're urged to stick to their parents' comforting tales and pursue normalcy. Regular readers are welcomed, but those resonating with the story should quit."
+#                            f"\n\n")
+#         if i == 0:  # 'first part (1/n)'
+#             sequence_prompt += (
+#                 f"For the following event: {event_name}. Generate a sequence that covers the first part of the event.")
+#         elif i != num_parts - 1:  # 'middle parts (2/n to n-1/n)'
+#             sequence_prompt += (
+#                 f"For the following event: {event_name}. Given the previous sequences: {sequences}. Continue the sequence by providing additional details about the event.")
+#         else:  # 'final part (n/n)'
+#             sequence_prompt += (
+#                 f"For the following event: {event_name}. Given the previous sequences: {sequences}. Finalize the sequence to cover the "
+#                 f"outcome of the event.")
+#
+#         sequence = generate_text(sequence_prompt)
+#         sequences += sequence + '\n'
+#         print(sequence)
+#
+#     return sequences
+#
+#
+# # An example usage of the function:
+#
+#
+# chap_summary = ("The chapter starts with John's discovery of the secret society. This unexpected revelation takes place "
+#                  "in an eerie, abandoned warehouse at the outskirts of town. The silent, gigantic structure, with its "
+#                  "creaky wooden floorboards and dim, flickering light, adds a chilling atmosphere to the unfolding mystery. "
+#                  "As he ducks behind a pile of old crates, John inadvertently witnesses a secret gathering of masked "
+#                  "individuals engaged in an ominous ceremony. His heart pounds with fear and bewilderment, realising that "
+#                  "he's stumbled upon something far darker and deeper than he could ever have imagined. The implications of "
+#                  "this discovery are enormous for the overall plot, introducing an intricate web of conspiracy that John "
+#                  "must now unravel. Shortly after this discovery, John comes face to face with a conflict involving his old "
+#                  "friend, George. Despite the long-established camaraderie, their relationship fumbles into disagreement when "
+#                  "George too reveals his involvement with the secret society. The conversation happens in John's once "
+#                  "comforting and familiar apartment, the tension palpable between the two long-time friends. George, despite "
+#                  "his loyalty, defends his allegiance to the secret society, causing a rift between them that neither had "
+#                  "anticipated, and adding even more to the emotional stakes of the unraveling mystery. The chapter concludes "
+#                  "with an unexpected ally appearing in the form of Claire, John's neighbor. After his falling out with George, "
+#                  "John feels utterly alone until he stumbles into Claire in the building's shared laundry room. As they strike "
+#                  "up a conversation, she subtly hints at her knowledge of the secret society and offers her assistance. Despite "
+#                  "her seemingly cheery demeanor, there's also something mysterious about Claire that hints at a hidden agenda. "
+#                  "However, John, desperate for any help, finds solace in Claire – a character who suddenly turns from peripheral "
+#                  "to central. Her surprising involvement suggests a shift in alliances and provides a glimmer of hope in John's "
+#                  "increasingly complicated situation, thereby adding an interesting twist to the narrative.")
+# event_name = ("The chapter starts with John's discovery of the secret society. This unexpected revelation takes place "
+#                    "in an eerie, abandoned warehouse at the outskirts of town. The silent, gigantic structure, with its "
+#                    "creaky wooden floorboards and dim, flickering light, adds a chilling atmosphere to the unfolding mystery. "
+#                    "As he ducks behind a pile of old crates, John inadvertently witnesses a secret gathering of masked "
+#                    "individuals engaged in an ominous ceremony. His heart pounds with fear and bewilderment, realizing that "
+#                    "he's stumbled upon something far darker and deeper than he could ever have imagined. The implications of "
+#                    "this discovery are enormous for the overall plot, introducing an intricate web of conspiracy that John "
+#                    "must now unravel.")
+#
+# num_parts = 3
+#
+# sequences = generate_sequence_parts(chap_summary, event_name, num_parts)
